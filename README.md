@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/maloft/collegues-front.svg?branch=master)](https://travis-ci.org/maloft/collegues-front)
 
-**The web app is available at:** [](https://maloft.github.io/collegues-front/)
+**The web app is available at:** [https://maloft.github.io/collegues-front/](https://maloft.github.io/collegues-front/)
 
 
 # ColleguesFront
