@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/maloft/collegues-front.svg?branch=master)](https://travis-ci.org/maloft/collegues-front)
+
+**The web app is available at:** [](https://maloft.github.io/collegues-front/)
+
+
 # ColleguesFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
