@@ -24,6 +24,10 @@ export class CollegueComponent implements OnInit {
     console.log('Modification du collègue');
   }
 
+  valider(): void{
+    this.apresModifier = false;
+  }
+
   nouveauCollegue(): void {
     console.log('Création d\'un nouveau collègue');
   }

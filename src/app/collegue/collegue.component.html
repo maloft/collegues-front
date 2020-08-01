@@ -20,10 +20,11 @@
 <div class="row" style="margin-top: 50px; text-align: center;">
   <div class="col">
     <button  *ngIf = "avantModifier" (click)="modifier()">Modifier</button>
+    <button *ngIf="apresModifier" class="btn btn-outline-secondary mr-2" (click)="valider()">Valider</button>
 
   </div>
   <div class="col">
     <button  *ngIf = "avantModifier" (click)="nouveauCollegue()">Créer un nouveau collègue</button>
-    <button *ngIf = "apresModifier" >Valider</button>
+
   </div>
 </div>
