@@ -3,18 +3,27 @@
     <img src="{{col.photoUrl}}" class="img-fluid rounded" style="width: 100%;" alt="Monkey D.Luffy">
   </div>
   <div  >
-    <li>Matricule : {{col.matricule}}</li>
-    <li>Nom : {{col.nom}}</li>
-    <li>Prenom : {{col.prenom}}</li>
-    <li>Date de naissance : {{col.dateDeNaissance}}</li>
-    <li>Email : {{col.email}}</li>
+    <p>Matricule : {{col.matricule}}</p>
+    <p>Nom : {{col.nom}}</p>
+    <p>Prenom : {{col.prenom}}</p>
+    <p>Date de naissance : {{col.dateDeNaissance}}</p>
+    <p *ngIf="avantModifier">Email : {{col.email}}</p>
+    <p *ngIf="avantModifier">photo URL : {{col.photoUrl}}</p>
+    <form *ngIf="apresModifier" action="">
+      <label for="url">photo URL : </label>
+      <input type="url" id="photoUrl" name="photoUrl" style="margin-left: 10px;"><br>
+      <label for="email">Email : </label>
+      <input type="text" id="email" name="email" style="margin-left: 10px;">
+    </form>
   </div>
 </div>
 <div class="row" style="margin-top: 50px; text-align: center;">
   <div class="col">
-    <button  (click)="modifier()">Modifier</button>
+    <button  *ngIf = "avantModifier" (click)="modifier()">Modifier</button>
+
   </div>
   <div class="col">
-    <button  (click)="nouveauCollegue()">Créer un nouveau collègue</button>
+    <button  *ngIf = "avantModifier" (click)="nouveauCollegue()">Créer un nouveau collègue</button>
+    <button *ngIf = "apresModifier" >Valider</button>
   </div>
 </div>
