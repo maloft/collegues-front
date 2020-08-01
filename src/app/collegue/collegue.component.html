@@ -2,29 +2,73 @@
   <div class="col-md-3 col-sm-5">
     <img src="{{col.photoUrl}}" class="img-fluid rounded" style="width: 100%;" alt="Monkey D.Luffy">
   </div>
-  <div  >
-    <p>Matricule : {{col.matricule}}</p>
-    <p>Nom : {{col.nom}}</p>
-    <p>Prenom : {{col.prenom}}</p>
-    <p>Date de naissance : {{col.dateDeNaissance}}</p>
-    <p *ngIf="avantModifier">Email : {{col.email}}</p>
-    <p *ngIf="avantModifier">photo URL : {{col.photoUrl}}</p>
-    <form *ngIf="apresModifier" action="">
-      <label for="url">photo URL : </label>
-      <input type="url" id="photoUrl" name="photoUrl" style="margin-left: 10px;"><br>
-      <label for="email">Email : </label>
-      <input type="text" id="email" name="email" style="margin-left: 10px;">
-    </form>
+  <div>
+    <div class="row">
+      <div class="col">
+        <p>Matricule :</p>
+      </div>
+      <div class="col">
+        <p>{{col.matricule}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Nom :</p>
+      </div>
+      <div class="col">
+        <p>{{col.nom | uppercase}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Prenom : </p>
+      </div>
+      <div class="col">
+        <p>{{col.prenom}}</p>
+      </div>
+    </div>
+    <div *ngIf="!apresModifier" class="row">
+      <div class="col">
+        <p>Date de naissance : </p>
+      </div>
+      <div class="col">
+        <p>{{col.dateDeNaissance | date : 'mediumDate'}}</p>
+      </div>
+    </div>
+    <div *ngIf="!apresModifier" class="row">
+      <div class="col">
+        <p>Email : </p>
+      </div>
+      <div class="col">
+        <p>{{col.email}}</p>
+      </div>
+    </div>
+    <div *ngIf="apresModifier" class="row">
+      <div class="col">
+        <label for="date">Date de naissance : </label>
+      </div>
+      <div class="col">
+        <input type="text" id="date" name="date" style="margin: 10px;">
+      </div>
+    </div>
+    <div *ngIf="apresModifier" class="row">
+      <div class="col">
+        <label for="email">Email : </label>
+      </div>
+      <div class="col">
+        <input type="text" id="email" name="email" style="margin: 10px;">
+      </div>
+    </div>
   </div>
 </div>
 <div class="row" style="margin-top: 50px; text-align: center;">
   <div class="col">
-    <button  *ngIf = "avantModifier" (click)="modifier()">Modifier</button>
+    <button *ngIf="avantModifier" (click)="modifier()">Modifier</button>
     <button *ngIf="apresModifier" class="btn btn-outline-secondary mr-2" (click)="valider()">Valider</button>
 
   </div>
   <div class="col">
-    <button  *ngIf = "avantModifier" (click)="nouveauCollegue()">Créer un nouveau collègue</button>
+    <button *ngIf="avantModifier" (click)="nouveauCollegue()">Créer un nouveau collègue</button>
 
   </div>
 </div>
